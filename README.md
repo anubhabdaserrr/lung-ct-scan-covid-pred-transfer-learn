@@ -35,6 +35,17 @@ No. of epochs : 100
 ### Loss Curves :
 <img src="./misc/mse_loss_curve.png" width="387" height="256" /> <img src="./misc/mae_curve.png" width="387" height="256" />
 
+### Metric Values : 
+
+| Models         	| Accuracy 	| Recall / Sensitivity 	| F1 Score 	| AUC   	|
+|----------------	|----------	|----------------------	|----------	|-------	|
+| BaselineNet    	| 0.75     	| 0.94                 	| 0.790    	| 0.894 	|
+| VGG16          	| 0.86     	| 0.84                 	| 0.857    	| 0.909 	|
+| DenseNet121    	| 0.88     	| 0.82                 	| 0.872    	| 0.932 	|
+| ResNet50       	| 0.87     	| 0.82                 	| 0.863    	| 0.898 	|
+| InceptionV3    	| 0.82     	| 0.82                 	| 0.820    	| 0.881 	|
+| EfficientNetB3 	| 0.70     	| 0.56                 	| 0.651    	| 0.805 	|
+
 ### Comparison of models based on various metrics :
 <img src="./misc/acc_plot.png" width="400" height="330" /> <img src="./misc/f1_plot.png" width="400" height="330" />
 <img src="./misc/recall_plot.png" width="400" height="330" /> <img src="./misc/auc_plot.png" width="400" height="330" />
