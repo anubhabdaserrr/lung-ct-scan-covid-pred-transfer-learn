@@ -36,8 +36,8 @@ No. of epochs : 100
 <img src="./misc/mse_loss_curve.png" width="387" height="256" /> <img src="./misc/mae_curve.png" width="387" height="256" />
 
 ### Comparison of models based on various metrics :
-<img src="./misc/acc_plot.png" width="400" height="350" /> <img src="./misc/f1_plot.png" width="400" height="350" />
-<img src="./misc/recall_plot.png" width="400" height="350" /> <img src="./misc/auc_plot.png" width="400" height="350" />
+<img src="./misc/acc_plot.png" width="400" height="330" /> <img src="./misc/f1_plot.png" width="400" height="330" />
+<img src="./misc/recall_plot.png" width="400" height="330" /> <img src="./misc/auc_plot.png" width="400" height="330" />
 
 ### Plot of metrics vs no. of parameters in models :
 <img src="./misc/metrics_trainable_params_plot.png"/> 
