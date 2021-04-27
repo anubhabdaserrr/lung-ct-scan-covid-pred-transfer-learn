@@ -1,0 +1,6 @@
+imgaug==0.2.9
+matplotlib==3.2.2
+numpy==1.19.5
+opencv-python==4.1.2.30
+sklearn==0.0
+tensorflow==2.4.1
