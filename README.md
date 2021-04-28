@@ -32,9 +32,6 @@ No. of epochs : 100
 
 ## Evaluation & test performance
 
-### Loss Curves :
-<img src="./misc/mse_loss_curve.png" width="387" height="256" /> <img src="./misc/mae_curve.png" width="387" height="256" />
-
 ### Metric Values : 
 
 | Models         	| Accuracy 	| Recall / Sensitivity 	| F1 Score 	| AUC   	|
@@ -54,19 +51,14 @@ No. of epochs : 100
 <img src="./misc/metrics_trainable_params_plot.png"/> 
 <img src="./misc/metrics_total_params_plot.png"/>
 
-### Validation Predicted & Actual Images :
-![](./misc/val_imgs_pred_3.png)
-![](./misc/val_imgs_pred_4.png)
+### Loss & Accuracy Curves :
 
-
-### Validation Images Pixel Intensity Histograms :
-![](./misc/pixel_hist_valpred3.png)
-![](./misc/pixel_hist_valpred3.png)
-
-### Denoising unseen test images :
-![](./misc/test_pred_1.png)
-![](./misc/test_pred_2.png) 
-![](./misc/test_pred_3.png) 
+<img src="./misc/baselinenet_curves.png"/>
+<img src="./misc/vgg_curves.png"/>
+<img src="./misc/densenet_curves.png"/>
+<img src="./misc/resnet_curves.png"/>
+<img src="./misc/inception_curves.png"/>
+<img src="./misc/efficientnet_curves.png"/>
 
 ## References
 Links go here
