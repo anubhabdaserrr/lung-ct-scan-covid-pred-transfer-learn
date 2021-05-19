@@ -9,6 +9,8 @@ Date : 27th April, 2021
 
 ## Objective & data
 
+In this project, I fine-tuned a bunch of pre-trained models like VGG16, InceptionV3, etc. for diagnosing Covid-19 based on Lung CT Scans. The dataset used can be found [here](https://google.com).
+
 ![](./misc/imgs_ct_scans.png)
 
 **Note : In the context of this project, denoising refers to removal the content of the background (which may not necessarily be "noise" but is treated in this work as such) to successfully extract the foreground text.**
