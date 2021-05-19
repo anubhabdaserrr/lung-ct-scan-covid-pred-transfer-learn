@@ -17,8 +17,18 @@ In this project, I fine-tuned a bunch of pre-trained models like VGG16, Inceptio
 
 ## Model & Training details
 
-### Convolutional Autoencoder Architecture
-![](./misc/autoenc_arch.png)
+### Models used 
+A vanilla CNN (BaselineNet) has been used to serve the purpose of a Baseline Model against which all the other models will be evaluated.
+
+| Models         	| Description 	| 
+|----------------	|----------	|
+| BaselineNet    	| Vanilla ConvNet based Baseline model     	|
+| VGG16          	| 0.86     	|
+| DenseNet121    	| 0.88     	|
+| ResNet50       	| 0.87     	|
+| InceptionV3    	| 0.82     	|
+| EfficientNetB3 	| 0.70     	|
+
 
 ### Training details
 ```
@@ -61,6 +71,9 @@ No. of epochs : 100
 <img src="./misc/resnet_curves.png"/>
 <img src="./misc/inception_curves.png"/>
 <img src="./misc/efficientnet_curves.png"/>
+
+## Limitations & future directions 
+limitations
 
 ## References
 Links go here
