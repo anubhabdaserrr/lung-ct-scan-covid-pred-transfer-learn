@@ -9,11 +9,11 @@ Date : 27th April, 2021
 
 ## Objective & data
 
-In this project, I fine-tuned a bunch of pre-trained models like VGG16, InceptionV3, etc. for diagnosing Covid-19 based on Lung CT Scans. The dataset used can be found [here](https://google.com).
+In this project, I fine-tuned a bunch of pre-trained models like VGG16, InceptionV3, etc. for diagnosing Covid-19 based on Lung CT Scans. The dataset used can be found [here](https://www.kaggle.com/luisblanche/covidct).
 
 ![](./misc/imgs_ct_scans.png)
 
-**Note : In the context of this project, denoising refers to removal the content of the background (which may not necessarily be "noise" but is treated in this work as such) to successfully extract the foreground text.**
+Transfer learning is basically using the knowledge acquired while finding the solution to a certain problem to solve other problems. Putting it in context of computer vision models using deep convolutional neural networks, when a model is trained on a large dataset, the initial (convolutional) layers learn to detect general features pertaining to image understanding - Like detecting edges followed by composition of these edges and so on. The initial layers serve as feature detectors which are built on top of each other in a hierarchical fashion to obtain more complex features as we go deeper into the network. Because these networks learns to detect general patterns in images, we can "transfer" this learned knowledge to other datasets to faciliate learning. This is particularly useful when our target dataset is small as we can use prior knowledge i.e. pretrained neural networks and tune it to the target dataset. This is done by retraining the final (or the last few) fully connected layers of the network since they're responsible for classification or by adding a few fully connected layers (if need be).
 
 ## Model & Training details
 
@@ -25,7 +25,7 @@ A vanilla CNN (BaselineNet) has been used to serve the purpose of a Baseline Mod
 | BaselineNet    	| Vanilla ConvNet based Baseline model     	|
 | VGG16          	| 0.86     	|
 | DenseNet121    	| 0.88     	|
-| ResNet50       	| 0.87     	|
+| ResNet50       	| Makes use of skip connections to deal with vanishing gradients as well as to<br>allow the later layers to learn from the information learned by the initial layers     	|
 | InceptionV3    	| 0.82     	|
 | EfficientNetB3 	| 0.70     	|
 
