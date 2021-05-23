@@ -9,7 +9,9 @@ Date : 27th April, 2021
 
 ## Objective & data
 
-In this project, I fine-tuned a bunch of pre-trained models like VGG16, InceptionV3, etc. for diagnosing Covid-19 based on Lung CT Scans. The dataset used can be found [here](https://www.kaggle.com/luisblanche/covidct).
+In this project, I fine-tuned a bunch of pre-trained models like VGG16, InceptionV3, etc. for diagnosing Covid-19 based on Lung CT Scans. The dataset used can be found [here](https://www.kaggle.com/luisblanche/covidct). The inspiration behind this project was primarily to speed-up the diagnostic process by building detection models trained on CT scans which are non-invasive in nature.
+
+**Note : This project is built purely for educational purposes and not for medical diagnosis.**
 
 ![](./misc/imgs_ct_scans.png)
 
@@ -23,10 +25,10 @@ A vanilla CNN (BaselineNet) has been used to serve the purpose of a Baseline Mod
 | Models         	| Description 	| 
 |----------------	|----------	|
 | BaselineNet    	| Vanilla ConvNet based Baseline model     	|
-| VGG16          	| 0.86     	|
-| DenseNet121    	| 0.88     	|
-| ResNet50       	| Makes use of skip connections to deal with vanishing gradients as well as to<br>allow the later layers to learn from the information learned by the initial layers     	|
-| InceptionV3    	| 0.82     	|
+| VGG16          	| Upscaled version of AlexNet (which the first CNN based winner of ImageNet.) in terms of layers.	|
+| DenseNet121    	| Made up of dense blocks where each layer is connected to every other layer in a feedforward way. Advantages :  alleviates vanishing-gradient problem, strengthens feature propagation, encourages feature reuse, reduction in no. of parameters. 50-layers Densenet outperforms 152-layers ResNet.  	|
+| ResNet50       	| Makes use of skip connections to deal with vanishing gradients as well as to allow the later layers to learn from the information learned by the initial layers     	|
+| InceptionV3    	| Makes use of Inception modules as building blocks to reduce compute, which contain multiple branches of Conv. & Pool layers which are concatenated channel-wise prior to feeding it to the subsequent blocks. Also uses auxiliary classifiers as regularizers.    	|
 | EfficientNetB3 	| 0.70     	|
 
 
