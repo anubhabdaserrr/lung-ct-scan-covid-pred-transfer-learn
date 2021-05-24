@@ -39,19 +39,6 @@ A vanilla CNN (BaselineNet) has been used to serve the purpose of a Baseline Mod
 | InceptionV3    	| Makes use of Inception modules as building blocks to reduce compute, which contain multiple branches of Conv. & Pool layers which are concatenated channel-wise prior to feeding it to the subsequent blocks. Also uses auxiliary classifiers as regularizers.    	|
 | EfficientNetB3 	| 0.70     	|
 
-
-### Training details
-```
-Optimizer : Adam with mini-batch gradient descent
-beta1 : 0.999
-beta2 : 0.999
-Learning rate : 0.01 
-Loss : Mean Squared Error
-Validation Metric : Mean Absolute Error
-Mini batch size : 32
-No. of epochs : 100
-```
-
 ## Evaluation & test performance
 
 ### Model Comparsion | Metric Values : 
