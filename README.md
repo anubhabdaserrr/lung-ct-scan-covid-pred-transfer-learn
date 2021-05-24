@@ -17,6 +17,8 @@ In this project, I fine-tuned a bunch of pre-trained models like VGG16, Inceptio
 
 Transfer learning is basically using the knowledge acquired while finding the solution to a certain problem to solve other problems. Putting it in context of computer vision models using deep convolutional neural networks, when a model is trained on a large dataset, the initial (convolutional) layers learn to detect general features pertaining to image understanding - Like detecting edges followed by composition of these edges and so on. The initial layers serve as feature detectors which are built on top of each other in a hierarchical fashion to obtain more complex features as we go deeper into the network. Because these networks learns to detect general patterns in images, we can "transfer" this learned knowledge to other datasets to faciliate learning. This is particularly useful when our target dataset is small as we can use prior knowledge i.e. pretrained neural networks and tune it to the target dataset. This is done by retraining the final (or the last few) fully connected layers of the network since they're responsible for classification or by adding a few fully connected layers (if need be).
 
+![](./misc/transfer_learn_net.png)
+
 ### Train & Test Distribution
 
 ![](./misc/train_distrib.png) ![](./misc/test_distrib.png)
