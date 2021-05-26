@@ -63,12 +63,17 @@ The test set is pretty small - approx. 50 instances in each class. Therefore, th
 
 **Note : Performance of InceptionV3 & EfficientNetB3 were very close to no skill classifiers (i.e. 0.5 out-of-sample accuracy) if the BatchNorm layers were kept frozen. Retraining them helped with improving model performance.**
 
+### ROC Plot
+
+<img src="./misc/roc_curves.png"/> 
+
+It's also clearly evident from this plot that EfficientNetB3 gives the worst performance out of all the models.
+
 ### Plot of metrics vs no. of parameters in models :
 
 The purpose of this section is to study whether pretrained models actually help us re-use learned feature detectors to solve a different problem. Or, in other words to study the "degree of transferability" of pre-trained models. This, in and of itself, seems like a daunting task hence, a very preliminary attempt has been made at tackling this problem. There seems to be a trend in Deep Learning to keep making models deeper & deeper to obtain better performing models (as in, models with better out-of-sample metric scores).
 
-<img src="./misc/metrics_trainable_params_plot.png"/> 
-<img src="./misc/metrics_total_params_plot.png"/>
+<img src="./misc/metrics_nontrainable_params_plot.png"/> 
 
 However, the above plots seems to be in contradiction with the aforementioned proposition.
 
