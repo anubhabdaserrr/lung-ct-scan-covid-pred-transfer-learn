@@ -85,10 +85,11 @@ There is ample evidence in the Deep Learning research literature that increasing
 change graphs maybe ? like no. of parameters in fcca re more so arent indicative of transferbaility
 
 ## Limitations & future directions 
-1. Only 6 (5-pretrained) models used to establish any useful correlation
-2. Domain shift problem due to hospital machines
-3. As mentioned above, very small test set. Scores might not be representative. WOuld've made mkore sense to use cross-validation however that's computationally expensive in Deep Learning.
-4. Measure of "size" of model using parameters not appropriate since most params are at fcc
+1. Only 6 (5-pretrained) models used to study gain in performance pertaining to increase in size of models. Using more models of different sizes might improve the quality of this study. 
+2. Measure of "size" of models might not have been very appropriate in the study - We used non-trainable parameters as a measure of size of pre-trained models. Maybe, the depth of networks or a combination of depth & no. of filters maybe a better predictor of performance gain compared to what non-trainable parameters.
+3. As mentioned before, size of test set is very small, thus scores might not be representative of out-of-sample performance. Cross-validation yields more representative scores for small datasets. However, that's computationally expensive in Deep Learning.
+4. Domain shift might significantly affect performance of these diagnostic models. Different hospitals use different quality of equipments to generate these CT scans - Thus, things like resolution and other attributes of these scans can be significantly different in various hospitals. Models trained on a dataset of images from a particular hospital do not perform well when put to use in other hospitals. The data webpage clearly states *"The images are collected from COVID19-related papers from medRxiv, bioRxiv, NEJM, JAMA, Lancet, etc. CTs containing COVID-19 abnormalities are selected by reading the figure captions in the papers."* This does ensure some diversity in our training set. However, systematic study needs to be conducted to see how these models respond to CT scans from unseen domains.
+
 
 ## References
 1. Lecture 9 : CNN Architectures, CS231n lecture notes (Stanford - Spring 2021) [[Link]](http://cs231n.stanford.edu/slides/2021/lecture_9.pdf)
