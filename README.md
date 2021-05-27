@@ -71,25 +71,23 @@ It's also clearly evident from this plot that EfficientNetB3 gives the worst per
 
 ### Plot of metrics vs no. of parameters in models :
 
-The purpose of this section is to study whether pretrained models actually help us re-use learned feature detectors to solve a different problem. Or, in other words to study the "degree of transferability" of pre-trained models. This, in and of itself, seems like a daunting task hence, a very preliminary attempt has been made at tackling this problem. There seems to be a trend in Deep Learning to keep making models deeper & deeper to obtain better performing models (as in, models with better out-of-sample metric scores).
+The purpose of this section is to study reusability of pretrained models to solve the problem at hand - In other words to study the *"degree of transferability"* of pre-trained models. Because, transfer learning would be pointless in case, the final fully connected layers would be doing most of the heavy-lifting when it comes to the task at hand. This, in and of itself, seems like a daunting task hence, a very preliminary attempt has been made at tackling this problem. 
+
+We know that more is the no. of parameters, more is the representational capacity of a model. Owing to this, we study how the value of various performance metrics vary with the no. of non-trainable parameters. But, doesn't this reduce the objective of the current study to basically studying how performance varies with size of the model since most parameters in these big pre-trained models are non-trainable ? (The trainable parameters, which are very small in number are at the end of the network in the fully-connected layers.) - The answer is NO! - It is true, the non-trainable parameters form a very large fraction of the total no. of parameters, or the "size" of the model. However, these parameters are frozen. In a regular performance vs size study, all these parameters would be trainable. Here, increase in size, which is effectiely an increase in the no. of non-trainable parameters can be regarded as a proxy for the **pre-trained representational capacity of the model**, rather than the representaional capacity introduced soleley due to increase in no. of parameters. Pre-trained representational capacity entails the representaional capacity due to increase in the no. of parameters as well as the information as to how good the pre-trained parameter values are, to extract features. 
+
+In the Deep Learning research literature, it has been well documented that bigger (deeper) models lead to better performance. Thus, it seees like, we should be able to confirm the hypotheis that, bigger pre-trained models lead to better performance for other tasks (owing to their higher pre-trained representational capacity), given the pre-trained part of the network isn't too task specific.
 
 <img src="./misc/metrics_nontrainable_params_plot.png"/> 
 
-However, the above plots seems to be in contradiction with the aforementioned proposition.
+However, the plot doesn't validate the aforementioned hypothesis. This means, either there's no correlation b/w performance and no. of non-trainable parameters or the assumption that the no. of non-trainable parameters serve as a proxy for pre-trained representational capacity is itself flawed.
 
-Performance doesn't seem to increase with an increase in the total no. of parameters of the pre-trained model. Size, in this context implies both the the no. of trainable parameters as well as the total no. of parameters.
-
-There is ample evidence in the Deep Learning research literature that increasing the depth of models does produce improved values on these metrics. This means either the latter Conv. layers in the deeper networks are learning filters that are more to less specific to the training dataset and the classification task at hand or the source and target domains are too different - Transfer learning is primarily meant to be used for a task when a pre-trained model has been trained on a similar task. Classifying Covid-19 using CT scans & the ImageNet classification task of diverse real-world entities.
-
-
-change graphs maybe ? like no. of parameters in fcca re more so arent indicative of transferbaility
+(This section is purely experimental and not well-researched, and hence it lacks rigour. How "pre-trained representational capacity" is defined, can be considered vague. On top of that "pre-trained part of the network isn't too task specific" seems like too much of an assumption. )
 
 ## Limitations & future directions 
 1. Only 6 (5-pretrained) models used to study gain in performance pertaining to increase in size of models. Using more models of different sizes might improve the quality of this study. 
-2. Measure of "size" of models might not have been very appropriate in the study - We used non-trainable parameters as a measure of size of pre-trained models. Maybe, the depth of networks or a combination of depth & no. of filters maybe a better predictor of performance gain compared to what non-trainable parameters.
+2. Measure of "size" for pre-trained representational capacity of models might not have been very appropriate in the study - We used non-trainable parameters as a measure of size of pre-trained models. Maybe, the depth of networks or a combination of depth & no. of filters maybe a better predictor of performance gain compared to what non-trainable parameters.
 3. As mentioned before, size of test set is very small, thus scores might not be representative of out-of-sample performance. Cross-validation yields more representative scores for small datasets. However, that's computationally expensive in Deep Learning.
 4. Domain shift might significantly affect performance of these diagnostic models. Different hospitals use different quality of equipments to generate these CT scans - Thus, things like resolution and other attributes of these scans can be significantly different in various hospitals. Models trained on a dataset of images from a particular hospital do not perform well when put to use in other hospitals. The data webpage clearly states *"The images are collected from COVID19-related papers from medRxiv, bioRxiv, NEJM, JAMA, Lancet, etc. CTs containing COVID-19 abnormalities are selected by reading the figure captions in the papers."* This does ensure some diversity in our training set. However, systematic study needs to be conducted to see how these models respond to CT scans from unseen domains.
-
 
 ## References
 1. Lecture 9 : CNN Architectures, CS231n lecture notes (Stanford - Spring 2021) [[Link]](http://cs231n.stanford.edu/slides/2021/lecture_9.pdf)
